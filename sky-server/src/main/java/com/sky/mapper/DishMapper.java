@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.github.pagehelper.Page;
@@ -36,7 +37,7 @@ public interface DishMapper {
 
     /**
      * 分页查询菜品
-     * 
+     *
      * @param dishPageQueryDTO
      * @return
      */
@@ -53,8 +54,8 @@ public interface DishMapper {
 
     /**
      * 删除菜品
-     * 
-     * @param dish
+     *
+     * @param id
      */
     @Delete("delete from dish where id = #{id}")
     void deleteById(Long id);
@@ -76,7 +77,7 @@ public interface DishMapper {
     /**
      * 根据分类id查询菜品
      * 
-     * @param categoryId
+     * @param dish
      * @return
      */
     List<Dish> list(Dish dish);
