@@ -72,7 +72,7 @@ public class DishController {
      */
     @DeleteMapping
     public Result<String> delete(@RequestParam List<Long> ids) {
-        log.info("删除菜品：{}", ids);
+        log.info("批量删除菜品：{}", ids);
         dishService.deleteBatch(ids);
         clearRedis("dish_*");
         return Result.success();

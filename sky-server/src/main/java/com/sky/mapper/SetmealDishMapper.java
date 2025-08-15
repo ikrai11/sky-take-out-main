@@ -16,7 +16,6 @@ public interface SetmealDishMapper {
      * @param dishIds
      * @return
      */
-    @Select("select setmeal_id from setmeal_dish where dish_id in (#{dishIds})")
     List<Long> getSetmealIdByDishIds(List<Long> dishIds);
 
     /**
