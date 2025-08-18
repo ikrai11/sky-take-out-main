@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/admin/shop")
 @Slf4j
 public class ShopController {
+    private static final String key = "SHOP_STATUS";
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
@@ -42,7 +43,7 @@ public class ShopController {
      */
     @GetMapping("/status")
     public Result<Integer> getShopStatus() {
-        Integer status = (Integer) Optional.ofNullable(redisTemplate.opsForValue().get("SHOP_STATUS")).orElse(0);
+        Integer status = (Integer) Optional.ofNullable(redisTemplate.opsForValue().get(key)).orElse(0);
         log.info("获取店铺状态: {}", status == 1 ? "营业" : "休息");
         return Result.success(status);
     }
