@@ -58,8 +58,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 shoppingCart.setName(dish.getName());
                 shoppingCart.setImage(dish.getImage());
                 shoppingCart.setAmount(dish.getPrice());
-                shoppingCart.setNumber(1);
-                shoppingCart.setCreateTime(LocalDateTime.now());
             } else {
                 // 套餐
                 Long setmealId = shoppingCartDTO.getSetmealId();
@@ -67,9 +65,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 shoppingCart.setName(setmeal.getName());
                 shoppingCart.setImage(setmeal.getImage());
                 shoppingCart.setAmount(setmeal.getPrice());
-                shoppingCart.setNumber(1);
-                shoppingCart.setCreateTime(LocalDateTime.now());
             }
+            shoppingCart.setNumber(1);
+            shoppingCart.setCreateTime(LocalDateTime.now());
             shoppingCartMapper.insert(shoppingCart);
         }
     }

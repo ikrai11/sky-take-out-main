@@ -11,3 +11,6 @@
     access-key-id: LTAI5tSg8Fm9gFnjen5iKLaA
     access-key-secret: CfU2KpoGXsBITnwzlhyWmqGjRbX29T
     bucket-name: sky01-demo
+   wechat:
+     appid: wx8c2eaef463297837
+     secret: 0f7e3fcde21595ac4613db5456897dd0
