@@ -154,7 +154,8 @@ public class ReportServiceImpl implements ReportService {
         }
 
         // 时间区间内的总订单数
-        Integer totalOrderCount = orderCountList.stream().reduce((a, b) -> a + b).get();
+        //Integer totalOrderCount = orderCountList.stream().reduce((a, b) -> a + b).get();
+        Integer totalOrderCount = orderCountList.stream().reduce(Integer::sum).get();
         // 时间区间内的总有效订单数
         Integer validOrderCount = validOrderCountList.stream().reduce((a, b) -> a + b).get();
         // 订单完成率

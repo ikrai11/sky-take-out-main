@@ -52,7 +52,7 @@ public class ReportController {
     public Result<UserReportVO> userStatistics(
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end) {
-
+        log.info("用户数据统计：begin={}, end={}", begin, end);
         return Result.success(reportService.getUserStatistics(begin, end));
     }
 
@@ -67,7 +67,7 @@ public class ReportController {
     public Result<OrderReportVO> orderStatistics(
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end) {
-
+        log.info("订单数据统计：begin={}, end={}", begin, end);
         return Result.success(reportService.getOrderStatistics(begin, end));
     }
 
