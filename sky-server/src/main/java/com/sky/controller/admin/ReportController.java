@@ -26,6 +26,13 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
+    /**
+     * 营业额统计
+     *
+     * @param begin
+     * @param end
+     * @return
+     */
     @GetMapping("/turnoverStatistics")
     public Result<TurnoverReportVO> turnoverStatistics(
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
