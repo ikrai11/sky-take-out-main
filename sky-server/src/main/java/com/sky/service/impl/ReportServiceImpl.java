@@ -191,7 +191,8 @@ public class ReportServiceImpl implements ReportService {
         String numberList = StringUtils
                 .join(goodsSalesDTOList.stream().map(GoodsSalesDTO::getNumber).collect(Collectors.toList()), ",");
 
-        return SalesTop10ReportVO.builder()
+        return SalesTop10ReportVO
+                .builder()
                 .nameList(nameList)
                 .numberList(numberList)
                 .build();
